@@ -6,7 +6,7 @@ using System;
 public class BasicRanged: AttackBehaviour
 {
     private TimeSpan lifespan = new TimeSpan(0,0,2);
-    private int speed;
+    private float speed;
     protected override void Start()
     {
         timer = DateTime.Now;
@@ -21,7 +21,7 @@ public class BasicRanged: AttackBehaviour
             Destroy(this.gameObject);
         }
     }
-    public override void SetSpeed(int speed)
+    public override void SetSpeed(float speed)
     {
         this.speed = speed;
     }
