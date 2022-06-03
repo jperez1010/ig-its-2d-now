@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - MythomorphE
+  - Obstacle
+  - Attack
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Obstacle
   - 
   - 
   - 

@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        
+        dir = new Vector3(0, 0, 1);
     }
 
     // Update is called once per frame
