@@ -134,6 +134,8 @@ m_PackageAssets:
         - 8.0.2
         - 9.0.0-pre.1
         compatible:
+        - 5.0.6
+        - 5.0.7
         - 5.0.8
         - 5.0.9
         - 5.0.10
@@ -272,6 +274,10 @@ m_PackageAssets:
         - 2.1.0-preview.5
         - 2.1.0-preview.6
         compatible:
+        - 1.9.0
+        - 1.10.2
+        - 1.11.2
+        - 1.12.5
         - 1.13.5
         - 1.14.1
         - 1.14.4
@@ -303,7 +309,7 @@ m_PackageAssets:
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
-        verified: 1.13.5
+        verified: 1.9.0
       dependencies:
       - name: com.unity.nuget.newtonsoft-json
         version: 2.0.0
@@ -3386,4 +3392,4 @@ m_PackageAssets:
   m_LocalPackages:
     m_LocalFileStatus: []
 m_ProjectPath: C:/Users/Felipe Castro/ig-its-2d-now/Packages
-m_EditorVersion: 2020.3.21f1 (a38c86f6690f)
+m_EditorVersion: 2020.3.19f1 (68f137dc9bbe)

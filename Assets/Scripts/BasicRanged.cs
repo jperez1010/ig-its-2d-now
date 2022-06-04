@@ -25,4 +25,14 @@ public class BasicRanged: AttackBehaviour
     {
         this.speed = speed;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "MythomorphE")
+        {
+            other.gameObject.GetComponent<HealthHandler>().Damage(this.GetComponent<AttackStats>().damage);
+            float weight = other.gameObject.GetComponent<MythomorphStats>().weight;
+            other.gameObject.transform.Translate(direction * this.GetComponent<AttackStats>().knockback / weight);
+            Destroy(gameObject);
+        }
+    }
 }

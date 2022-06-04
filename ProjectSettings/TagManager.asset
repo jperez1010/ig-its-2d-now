@@ -7,6 +7,7 @@ TagManager:
   - MythomorphE
   - Obstacle
   - Attack
+  - Map
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - UI
   - Player
   - Obstacle
-  - 
+  - Map
   - 
   - 
   - 
