@@ -6,7 +6,7 @@ using System;
 public class BasicRanged: AttackBehaviour
 {
     private TimeSpan lifespan = new TimeSpan(0,0,2);
-    private int speed;
+    private float speed;
     protected override void Start()
     {
         timer = DateTime.Now;
@@ -21,8 +21,18 @@ public class BasicRanged: AttackBehaviour
             Destroy(this.gameObject);
         }
     }
-    public override void SetSpeed(int speed)
+    public override void SetSpeed(float speed)
     {
         this.speed = speed;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "MythomorphE")
+        {
+            other.gameObject.GetComponent<HealthHandler>().Damage(this.GetComponent<AttackStats>().damage);
+            float weight = other.gameObject.GetComponent<MythomorphStats>().weight;
+            other.gameObject.transform.Translate(direction * this.GetComponent<AttackStats>().knockback / weight);
+            Destroy(gameObject);
+        }
     }
 }

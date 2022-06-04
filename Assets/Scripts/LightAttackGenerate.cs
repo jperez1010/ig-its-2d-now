@@ -8,6 +8,7 @@ public class LightAttackGenerate : MonoBehaviour
 {
     private GameObject Morph;
     public float spawn_distance = 0.4f;
+    public Transform fireposition;
     private void Start()
     {
         EventManager.current.OnLightAttackCommand += SpawnAttack;
@@ -21,7 +22,7 @@ public class LightAttackGenerate : MonoBehaviour
         MoveInfoList.MoveInfo.TryGetValue(AttackName, out AttackInfo);
         Vector3 Direction = GetDirection();
 
-        GameObject AttackInstance = GameObject.Instantiate((UnityEngine.GameObject)Resources.Load("Attack"), Direction, Quaternion.identity);
+        GameObject AttackInstance = Instantiate((UnityEngine.GameObject)Resources.Load("Attack"), Direction, Quaternion.identity);
         AttackInstance.GetComponent<AttackStats>().name = AttackInfo.GetName();
         AttackInstance.GetComponent<AttackStats>().damage = AttackInfo.GetDamage();
         AttackInstance.GetComponent<AttackStats>().speed = AttackInfo.GetSpeed();
@@ -37,12 +38,11 @@ public class LightAttackGenerate : MonoBehaviour
         BehaviourComponent.SetSpeed(AttackInfo.GetSpeed());
         BehaviourComponent.SetDirection(Direction);
 
-        AttackInstance.transform.position = Morph.transform.position + Direction * spawn_distance;
+        AttackInstance.transform.position = Morph.transform.Find("Aim").position + Direction * spawn_distance;
     }
 
     public Vector3 GetDirection()
     {
-        return GameObject.Find("Player").GetComponent<PlayerMovement>().dir.normalized;
+        return GameObject.Find("Player").GetComponentInChildren<PlayerAim>().GetDirection().normalized;
     }
-
 }
