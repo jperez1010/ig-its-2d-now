@@ -8,6 +8,6 @@ public class AttackStats : MonoBehaviour
     public new string name;
     public MoveType type;
     public int damage;
-    public float speed;
+    public int speed;
     public int knockback;
 }
