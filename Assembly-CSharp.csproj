@@ -87,7 +87,7 @@
     <Compile Include="Assets\Scripts\AttackPool.cs" />
     <Compile Include="Assets\HealthHandler.cs" />
     <Compile Include="Assets\Scripts\BasicMelee.cs" />
-    <Compile Include="Assets\PlayerAim.cs" />
+    <Compile Include="Assets\Scripts\PlayerAim.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
