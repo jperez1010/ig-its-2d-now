@@ -6,7 +6,7 @@ using System;
 public class BasicMelee : AttackBehaviour
 {
     private TimeSpan lifespan = new TimeSpan(0, 0, 0, 300);
-    private float speed;
+    private int speed;
     protected override void Start()
     {
         timer = DateTime.Now;
@@ -21,7 +21,7 @@ public class BasicMelee : AttackBehaviour
             Destroy(this.gameObject);
         }
     }
-    public override void SetSpeed(float speed)
+    public override void SetSpeed(int speed)
     {
         this.speed = speed;
     }

@@ -46,21 +46,7 @@ public class PlayerMovement : MonoBehaviour
             newDir.x = horizontalInput;
             newDir.z = verticalInput;
         }
-        Vector3 castPoint = this.gameObject.transform.position;
-        Vector3 dirx = new Vector3(newDir.x, 0, 0);
-        Vector3 dirz = new Vector3(0, 0, newDir.y);
-        RaycastHit hitx;
-        RaycastHit hitz;
-        bool horizontalContact = Physics.Raycast(new Ray(castPoint, dirx), out hitx, 1f, 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Obstacle"));
-        bool verticalContact = Physics.Raycast(new Ray(castPoint, dirz), out hitz, 1f, 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Obstacle"));
-        if (horizontalContact)
-        {
-            newDir.x = 0;
-        }
-        if (verticalContact)
-        {
-            newDir.y = 0;
-        }
+
         if (canMove)
         {
             this.transform.position = this.transform.position + Vector3.Normalize(newDir) * speed;
@@ -70,16 +56,16 @@ public class PlayerMovement : MonoBehaviour
 
         
 
-        //if (!newDir.Equals(Vector3.zero)) {
-            //dir = newDir;
-            //if (newDir.x > 0)
-            //{
-                //this.transform.rotation = Quaternion.Euler(-120, 0, 180);
-            //}
-            //else
-            //{
-                //this.transform.rotation = Quaternion.Euler(60, 0, 0);
-            //}
-        //}
+        if (!newDir.Equals(Vector3.zero)) {
+            dir = newDir;
+            if (newDir.x > 0)
+            {
+                this.transform.rotation = Quaternion.Euler(-120, 0, 180);
+            }
+            else
+            {
+                this.transform.rotation = Quaternion.Euler(60, 0, 0);
+            }
+        }
     }
 }
