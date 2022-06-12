@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -316,6 +317,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      vegic_sheet_0: -7343726852654902385
+      vegic_sheet_8: 768711310640557249
+      vegic_sheet_3: -6812332349798644459
+      vegic_sheet_7: 863732234054152896
+      vegic_sheet_4: -3792024988930803899
+      vegic_sheet_5: -6332261802497704411
+      vegic_sheet_6: 7073544463308139660
+      vegic_sheet_2: -3794529167375859038
+      vegic_sheet_1: 1561329558636153843
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
