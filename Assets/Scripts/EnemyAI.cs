@@ -33,7 +33,8 @@ public class EnemyAI : MonoBehaviour
         {
             IterateWaypointIndex();
             UpdateDestination();
-        } else if (State == AIState.HUNTING)
+        }
+        else if (State == AIState.HUNTING)
         {
             Player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
             agent.SetDestination(Player.position);
@@ -51,7 +52,7 @@ public class EnemyAI : MonoBehaviour
                 timer = 0;
                 elapsedTime = 0;
             }
-            
+
         }
         if (this.transform.position != Previous)
         {
