@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 0.03f;
+    private float speed = 0.1f;
     public bool canMove;
     public Vector3 dir;
     public Animator anim;
+    bool horizontalContact;
+    bool verticalContact;
 
     void Start()
     {
@@ -46,19 +48,28 @@ public class PlayerMovement : MonoBehaviour
             newDir.x = horizontalInput;
             newDir.z = verticalInput;
         }
-
-        if (canMove)
+        Vector3 castPoint = this.gameObject.transform.position;
+        Vector3 dirx = new Vector3(newDir.x, 0, 0);
+        Vector3 dirz = new Vector3(0, 0, newDir.z);
+        RaycastHit hitx;
+        RaycastHit hitz;
+        horizontalContact = Physics.Raycast(new Ray(castPoint, dirx), out hitx, 1f, 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Obstacle"));
+        verticalContact = Physics.Raycast(new Ray(castPoint, dirz), out hitz, 1f, 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Obstacle"));
+        if (horizontalContact)
         {
-            this.transform.position = this.transform.position + Vector3.Normalize(newDir) * speed;
+            newDir.x = 0;
         }
-        anim.SetBool("Walking", newDir.magnitude > 0.5);
-        
-
-        
-
-        if (!newDir.Equals(Vector3.zero)) {
-            dir = newDir;
-            if (newDir.x > 0)
+        if (verticalContact)
+        {
+            newDir.y = 0;
+        }
+        dir = newDir;
+    }
+    private void FixedUpdate()
+    {
+        if (!dir.Equals(Vector3.zero))
+        {
+            if (dir.x > 0)
             {
                 this.transform.rotation = Quaternion.Euler(-120, 0, 180);
             }
@@ -67,5 +78,10 @@ public class PlayerMovement : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(60, 0, 0);
             }
         }
+        if (canMove)
+        {
+            this.transform.position = this.transform.position + Vector3.Normalize(dir) * speed;
+        }
+        anim.SetBool("Walking", dir.magnitude > 0.5);
     }
 }

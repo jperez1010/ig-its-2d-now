@@ -13,7 +13,7 @@ public class HeavyAttackGenerate : MonoBehaviour
 
     private void SpawnAttack()
     {
-        Morph = GameObject.Find("PlayerMorph");
+        Morph = GameObject.Find("Player");
         Attacks AttackName = Morph.GetComponent<AttackPool>().heavyAttack;
         MoveInfo AttackInfo;
         MoveInfoList.MoveInfo.TryGetValue(AttackName, out AttackInfo);
@@ -40,6 +40,6 @@ public class HeavyAttackGenerate : MonoBehaviour
 
     public Vector3 GetDirection()
     {
-        return GameObject.Find("PlayerMorph").GetComponent<PlayerMovement>().dir.normalized;
+        return GameObject.Find("Player").GetComponentInChildren<PlayerAim>().GetDirection().normalized;
     }
 }

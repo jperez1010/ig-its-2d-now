@@ -7,6 +7,12 @@ TagManager:
   - MythomorphE
   - Obstacle
   - Attack
+  - Stone
+  - Metal
+  - Grass
+  - Gravel
+  - Wood
+  - Water
   layers:
   - Default
   - TransparentFX

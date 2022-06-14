@@ -6,12 +6,12 @@ public class MoveInfo : MonoBehaviour
 {
     private string name;
     private int damage;
-    private int speed;
+    private float speed;
     private int knockback;
     private MoveType type;
     private RangeType rtype;
     private Sprite sprite;
-    public MoveInfo (string name, int damage, int speed, int knockback, MoveType type, RangeType rtype, Sprite sprite)
+    public MoveInfo (string name, int damage, float speed, int knockback, MoveType type, RangeType rtype, Sprite sprite)
     {
         this.name = name;
         this.damage = damage;
@@ -31,7 +31,7 @@ public class MoveInfo : MonoBehaviour
         return this.damage;
     }
 
-    public int GetSpeed()
+    public float GetSpeed()
     {
         return this.speed;
     }
