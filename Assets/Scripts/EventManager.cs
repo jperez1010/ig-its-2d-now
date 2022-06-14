@@ -15,7 +15,7 @@ public class EventManager : MonoBehaviour
     public event Action OnEnvironmentTriggerInteract;
     public void EnvironmentTriggerInteract()
     {
-        if(OnEnvironmentTriggerInteract != null)
+        if (OnEnvironmentTriggerInteract != null)
         {
 
             OnEnvironmentTriggerInteract();
@@ -25,7 +25,7 @@ public class EventManager : MonoBehaviour
     public event Action OnLightAttackCommand;
     public void LightAttackCommand()
     {
-        if(OnLightAttackCommand != null)
+        if (OnLightAttackCommand != null)
         {
             Debug.Log("Light Attack Event");
             OnLightAttackCommand();
@@ -34,7 +34,7 @@ public class EventManager : MonoBehaviour
     public event Action OnHeavyAttackCommand;
     public void HeavyAttackCommand()
     {
-        if(OnHeavyAttackCommand != null)
+        if (OnHeavyAttackCommand != null)
         {
             Debug.Log("Heavy Attack Event");
             OnHeavyAttackCommand();
@@ -43,7 +43,7 @@ public class EventManager : MonoBehaviour
     public event Action OnEnemyLightAttackCommand;
     public void EnemyLightAttackCommand()
     {
-        if(OnEnemyLightAttackCommand != null)
+        if (OnEnemyLightAttackCommand != null)
         {
             OnEnemyLightAttackCommand();
         }

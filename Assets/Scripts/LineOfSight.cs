@@ -46,15 +46,20 @@ public class LineOfSight : MonoBehaviour
         RaycastHit hitCloseNeg;
         RaycastHit hitFarNeg;
         bool middle = Physics.Raycast(new Ray(castPoint, AI.GetDirection()), out hitBase, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
-        bool farPos = Physics.Raycast(new Ray(castPoint, AI.GetDirection()), out hitFarPos, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
-        bool closePos = Physics.Raycast(new Ray(castPoint, AI.GetDirection()), out hitClosePos, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
-        bool closeNeg = Physics.Raycast(new Ray(castPoint, AI.GetDirection()), out hitCloseNeg, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
-        bool farNeg = Physics.Raycast(new Ray(castPoint, AI.GetDirection()), out hitFarNeg, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
-        Debug.DrawLine(castPoint, endPosBase, Color.blue);
-        if (middle || farPos || closePos|| closeNeg || farNeg)
+        bool farPos = Physics.Raycast(new Ray(castPoint, Quaternion.Euler(0, 60, 0) * AI.GetDirection()), out hitFarPos, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
+        bool closePos = Physics.Raycast(new Ray(castPoint, Quaternion.Euler(0, 30, 0) * AI.GetDirection()), out hitClosePos, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
+        bool closeNeg = Physics.Raycast(new Ray(castPoint, Quaternion.Euler(0, -30, 0) * AI.GetDirection()), out hitCloseNeg, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
+        bool farNeg = Physics.Raycast(new Ray(castPoint, Quaternion.Euler(0, -60, 0) * AI.GetDirection()), out hitFarNeg, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
+        Debug.DrawRay(castPoint, AI.GetDirection() * RayDistance);
+        Debug.DrawRay(castPoint, Quaternion.Euler(0, 60, 0) * AI.GetDirection() * RayDistance);
+        Debug.DrawRay(castPoint, Quaternion.Euler(0, 30, 0) * AI.GetDirection() * RayDistance);
+        Debug.DrawRay(castPoint, Quaternion.Euler(0, -30, 0) * AI.GetDirection() * RayDistance);
+        Debug.DrawRay(castPoint, Quaternion.Euler(0, -60, 0) * AI.GetDirection() * RayDistance);
+
+        if (middle || farPos || closePos || closeNeg || farNeg)
         {
-            if (hitBase.collider.gameObject.CompareTag("Player") || hitFarPos.collider.gameObject.CompareTag("Player") || hitClosePos.collider.gameObject.CompareTag("Player") || hitFarNeg.collider.gameObject.CompareTag("Player")
-                || hitCloseNeg.collider.gameObject.CompareTag("Player"))
+            if (middle && hitBase.collider.gameObject.CompareTag("Player") || farPos && hitFarPos.collider.gameObject.CompareTag("Player") || closePos && hitClosePos.collider.gameObject.CompareTag("Player") || farNeg && hitFarNeg.collider.gameObject.CompareTag("Player")
+                || closeNeg && hitCloseNeg.collider.gameObject.CompareTag("Player"))
             {
                 return true;
             }
