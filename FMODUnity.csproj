@@ -56,42 +56,42 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\FMOD\src\fmod_studio.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\StudioGlobalParameterTrigger.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\fmod_dsp.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\EventReference.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\PlatformMobileLow.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\PlatformGroup.cs" />
-    <Compile Include="Assets\Plugins\FMOD\platforms\ios\src\PlatformIOS.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\Settings.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\StudioBankLoader.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\StudioListener.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\fmod_errors.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\ParamRef.cs" />
     <Compile Include="Assets\Plugins\FMOD\platforms\html5\src\PlatformWebGL.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\RuntimeUtils.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\BankRefAttribute.cs" />
     <Compile Include="Assets\Plugins\FMOD\platforms\tvos\src\PlatformAppleTV.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\EventHandler.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\ParamRefAttribute.cs" />
+    <Compile Include="Assets\Plugins\FMOD\platforms\android\src\PlatformAndroid.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\FMODEventTrack.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\AutomatableSlots.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\FMODEventPlayable.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\CodeGeneration.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\fmod_studio.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\PlatformMobileLow.cs" />
+    <Compile Include="Assets\Plugins\FMOD\platforms\ios\src\PlatformIOS.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\Settings.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\StudioBankLoader.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\fmod_errors.cs" />
+    <Compile Include="Assets\Plugins\FMOD\src\BankRefAttribute.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\Platform.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\FMODRuntimeManagerOnGUIHelper.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\RuntimeManager.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\EventHandler.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\EventRefAttribute.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\ParamRefAttribute.cs" />
-    <Compile Include="Assets\Plugins\FMOD\platforms\android\src\PlatformAndroid.cs" />
     <Compile Include="Assets\Plugins\FMOD\platforms\win\src\PlatformWindows.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\FMODEventTrack.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\fmod.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\AutomatableSlots.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\StudioParameterTrigger.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\FMODEventPlayable.cs" />
     <Compile Include="Assets\Plugins\FMOD\platforms\mac\src\PlatformMac.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\StudioEventEmitter.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\PlatformPlayInEditor.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\PlatformDefault.cs" />
     <Compile Include="Assets\Plugins\FMOD\platforms\linux\src\PlatformLinux.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\PlatformMobileHigh.cs" />
-    <Compile Include="Assets\Plugins\FMOD\src\CodeGeneration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\FMOD\platforms\win\lib\x86\fmodstudioL.dll" />

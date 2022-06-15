@@ -49,19 +49,20 @@ public class PlayerMovement : MonoBehaviour
             newDir.z = verticalInput;
         }
         Vector3 castPoint = this.gameObject.transform.position;
-        Vector3 dirx = new Vector3(newDir.x, 0, 0);
-        Vector3 dirz = new Vector3(0, 0, newDir.z);
+        Debug.Log(newDir);
+        Vector3 dirx = new Vector3(newDir.x * 0.1f, 0, 0);
+        Vector3 dirz = new Vector3(0, 0, newDir.z * 0.1f);
         RaycastHit hitx;
         RaycastHit hitz;
-        horizontalContact = Physics.Raycast(new Ray(castPoint, dirx), out hitx, 1f, 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Obstacle"));
-        verticalContact = Physics.Raycast(new Ray(castPoint, dirz), out hitz, 1f, 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Obstacle"));
-        if (horizontalContact)
+        horizontalContact = Physics.Raycast(new Ray(castPoint, dirx), out hitx, 1f, 1 << LayerMask.NameToLayer("Obstacle"));
+        verticalContact = Physics.Raycast(new Ray(castPoint, dirz), out hitz, 1f, 1 << LayerMask.NameToLayer("Obstacle"));
+        if (hitx.collider != null)
         {
             newDir.x = 0;
         }
-        if (verticalContact)
+        if (hitz.collider != null)
         {
-            newDir.y = 0;
+            newDir.z = 0;
         }
         dir = newDir;
     }
