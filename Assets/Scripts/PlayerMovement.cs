@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (hitz.collider)
         {
-            newDir.y = 0;
+            newDir.z = 0;
         }
         return newDir;
     }

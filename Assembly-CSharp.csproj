@@ -858,21 +858,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="FMODUnity.csproj">
-      <Project>{54D50E39-99B9-402E-998C-A44DB7F1C178}</Project>
-      <Name>FMODUnity</Name>
-    </ProjectReference>
-    <ProjectReference Include="FMODUnityResonance.csproj">
-      <Project>{DA4B4C84-7413-611B-14D6-C4F9BA252C12}</Project>
-      <Name>FMODUnityResonance</Name>
-    </ProjectReference>
     <ProjectReference Include="FMODUnityResonanceEditor.csproj">
       <Project>{79EA46DB-710F-9D05-76AB-BEFB972F06E6}</Project>
       <Name>FMODUnityResonanceEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="FMODUnity.csproj">
+      <Project>{54D50E39-99B9-402E-998C-A44DB7F1C178}</Project>
+      <Name>FMODUnity</Name>
+    </ProjectReference>
     <ProjectReference Include="FMODUnityEditor.csproj">
       <Project>{99947B53-D3EE-8F30-ADD0-89371BF9FFAA}</Project>
       <Name>FMODUnityEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityResonance.csproj">
+      <Project>{DA4B4C84-7413-611B-14D6-C4F9BA252C12}</Project>
+      <Name>FMODUnityResonance</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

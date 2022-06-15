@@ -20,13 +20,14 @@ public class HeavyAttackGenerate : MonoBehaviour
         Vector3 Direction = GetDirection();
 
         GameObject AttackInstance = GameObject.Instantiate((UnityEngine.GameObject)Resources.Load("Attack"), Direction, Quaternion.identity);
-        AttackInstance.GetComponent<AttackStats>().name = AttackInfo.GetName();
+        AttackInstance.GetComponent<AttackStats>().name = AttackInfo.GetMoveName();
         AttackInstance.GetComponent<AttackStats>().damage = AttackInfo.GetDamage();
         AttackInstance.GetComponent<AttackStats>().speed = AttackInfo.GetSpeed();
         AttackInstance.GetComponent<AttackStats>().knockback = AttackInfo.GetKnockback();
         AttackInstance.GetComponent<AttackStats>().type = AttackInfo.GetMoveType();
         AttackInstance.GetComponent<AttackStats>().direction = Direction;
-        AttackInstance.GetComponent<SpriteRenderer>().sprite = AttackInfo.GetSprite();
+        GameObject visual = Instantiate(AttackInfo.GetVisual());
+        visual.transform.parent = this.transform;
 
         AttackBehaviour Behaviour;
         MoveInfoList.Behaviour.TryGetValue(AttackInfo.GetRangeType(), out Behaviour);

@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class MoveInfo : MonoBehaviour
 {
-    private string name;
+    private string moveName;
     private int damage;
     private float speed;
     private int knockback;
     private MoveType type;
     private RangeType rtype;
-    private Sprite sprite;
-    public MoveInfo (string name, int damage, float speed, int knockback, MoveType type, RangeType rtype, Sprite sprite)
+    private GameObject visual;
+    public MoveInfo (string moveName, int damage, float speed, int knockback, MoveType type, RangeType rtype, GameObject visual)
     {
-        this.name = name;
+        this.moveName = moveName;
         this.damage = damage;
         this.speed = speed;
         this.knockback = knockback;
         this.type = type;
         this.rtype = rtype;
-        this.sprite = sprite;
+        this.visual = visual;
     }
-    public string GetName()
+    public string GetMoveName()
     {
-        return this.name;
+        return this.moveName;
     }
 
     public int GetDamage()
@@ -47,8 +47,8 @@ public class MoveInfo : MonoBehaviour
     {
         return this.rtype;
     }
-    public Sprite GetSprite()
+    public GameObject GetVisual()
     {
-        return this.sprite;
+        return this.visual;
     }
 }
