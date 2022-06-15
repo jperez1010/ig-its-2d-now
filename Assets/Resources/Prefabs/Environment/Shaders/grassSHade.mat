@@ -126,5 +126,5 @@ Material:
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Wind_Movement: {r: 0.16, g: 0.02, b: 0, a: 0}
+    - _Wind_Movement: {r: 1.21, g: 0.02, b: 0, a: 0}
   m_BuildTextureStacks: []
