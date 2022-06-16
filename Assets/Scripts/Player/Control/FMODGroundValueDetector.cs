@@ -4,7 +4,7 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
-public class Player_Move : MonoBehaviour
+public class FMODGroundValueDetector : MonoBehaviour
 {
     private int MaterialValue;
     private RaycastHit rh;
