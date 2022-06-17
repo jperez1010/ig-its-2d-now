@@ -71,12 +71,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 DetectObstacleCollisions(Vector3 newDir)
     {
         Vector3 castPoint = this.gameObject.transform.position;
-        Vector3 dirx = new(newDir.x, 0, 0);
-        Vector3 dirz = new(0, 0, newDir.z);
+        Vector3 dirx = new Vector3(newDir.x, 0, 0);
+        Vector3 dirz = new Vector3(0, 0, newDir.z);
         RaycastHit hitx;
         RaycastHit hitz;
-        Physics.Raycast(new Ray(castPoint, dirx), out hitx, 1f, 1 << LayerMask.NameToLayer("Obstacle"));
-        Physics.Raycast(new Ray(castPoint, dirz), out hitz, 1f, 1 << LayerMask.NameToLayer("Obstacle"));
+        Physics.Raycast(new Ray(castPoint, dirx), out hitx, 0.5f, 1 << LayerMask.NameToLayer("Obstacle"));
+        Physics.Raycast(new Ray(castPoint, dirz), out hitz, 0.5f, 1 << LayerMask.NameToLayer("Obstacle"));
         if (hitx.collider)
         {
             newDir.x = 0;
