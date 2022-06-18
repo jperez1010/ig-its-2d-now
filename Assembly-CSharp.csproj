@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\MoveInfoList.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\HarmEnemy.cs" />
+    <Compile Include="Assets\Health.cs" />
     <Compile Include="Assets\Scripts\BasicRanged.cs" />
     <Compile Include="Assets\OscillateColor_Point.cs" />
     <Compile Include="Assets\Scripts\EnemyLightAttackGenerate.cs" />
