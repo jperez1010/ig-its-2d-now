@@ -2029,6 +2029,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 746331686}
+--- !u!1 &1008594359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -103754239805027224, guid: 84e52e1f0557aa84c9cf0e8e08d872b5, type: 3}
+  m_PrefabInstance: {fileID: 1753859950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1008594363
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008594359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3733553949883705961, guid: 84e52e1f0557aa84c9cf0e8e08d872b5, type: 3}
 --- !u!1 &1027071041
 GameObject:
   m_ObjectHideFlags: 0
