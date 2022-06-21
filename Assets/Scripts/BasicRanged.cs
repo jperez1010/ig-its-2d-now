@@ -29,10 +29,14 @@ public class BasicRanged : AttackBehaviour
     {
         if (other.tag == "MythomorphE")
         {
-            Debug.Log("Collision");
             other.gameObject.GetComponent<HealthHandler>().Damage(this.GetComponent<AttackStats>().damage);
-            float weight = other.gameObject.GetComponent<MythomorphStats>().weight;
-            other.gameObject.transform.Translate(direction * this.GetComponent<AttackStats>().knockback / weight);
+            //float weight = other.gameObject.GetComponent<MythomorphStats>().weight;
+            //other.gameObject.transform.Translate(direction * this.GetComponent<AttackStats>().knockback / weight);
+            Destroy(gameObject);
+        }
+        if (other.tag == "Player")
+        {
+            Camera.main.GetComponent<Health>().Damage(this.GetComponent<AttackStats>().damage);
             Destroy(gameObject);
         }
     }

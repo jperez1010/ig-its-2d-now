@@ -25,7 +25,8 @@ public class Health : MonoBehaviour
     }
     void HealthBar()
     {
-        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, health / maxHealth, lerpSpeed);
+        float hp = Mathf.Lerp(healthBar.fillAmount, health / maxHealth, lerpSpeed);
+        healthBar.fillAmount = hp;
     }
     void ColorChanger()
     {

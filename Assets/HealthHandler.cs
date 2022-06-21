@@ -5,8 +5,8 @@ using UnityEngine;
 public class HealthHandler : MonoBehaviour
 {
 
-    public int health;
-    public int maxHealth;
+    public float health;
+    public float maxHealth;
     public HealthbarBehavior healthBar;
     public bool immune;
     int immuneCounter = 0;
@@ -32,7 +32,7 @@ public class HealthHandler : MonoBehaviour
         }
     }
 
-    public void Damage(int damage)
+    public void Damage(float damage)
     {
         if (!immune)
         {

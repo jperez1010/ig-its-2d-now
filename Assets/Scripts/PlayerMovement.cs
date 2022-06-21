@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float speed = 0.1f;
+    private float speed = 5f;
     public bool canMove;
     public Vector3 dir;
+    public Rigidbody rb;
     
     /// <summary>
     /// TO FIX
@@ -16,22 +17,18 @@ public class PlayerMovement : MonoBehaviour
 
     private double movementThreshold = 0.2;
 
-    void Update()
+    private void FixedUpdate()
     {
         Vector3 newDir = GetMovementInput();
         newDir = DetectObstacleCollisions(newDir);
         dir = newDir;
-    }
-
-    private void FixedUpdate()
-    {
         if (!dir.Equals(Vector3.zero))
         {
             FlipPlayer();
         }
         if (canMove)
         {
-            this.transform.position = this.transform.position + Vector3.Normalize(dir) * speed;
+            transform.position += dir.normalized * Time.deltaTime * speed;
         }
         anim.SetBool("Walking", dir.magnitude > movementThreshold);
     }
