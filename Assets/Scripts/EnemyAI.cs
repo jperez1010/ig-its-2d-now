@@ -16,14 +16,18 @@ public class EnemyAI : MonoBehaviour
     private Vector3 Dir;
     private Vector3 Previous;
     private AIState State;
+    private AISubstate subState;
     [SerializeField]
     float Range = 3;
     void Start()
     {
+        Player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        agent.SetDestination(Player.position);
         agent = GetComponent<NavMeshAgent>();
         UpdateDestination();
         Previous = this.transform.position;
         Dir = (target - Previous).normalized;
+        subState = AISubstate.WALKING;
     }
 
     // Update is called once per frame
@@ -31,15 +35,26 @@ public class EnemyAI : MonoBehaviour
     {
         if (State == AIState.SCOUTING && Vector3.Distance(transform.position, target) < 2.5)
         {
+            System.Random rand = new System.Random();
+            int chance = rand.Next(0, 100);
+            Debug.Log(chance);
             IterateWaypointIndex();
             UpdateDestination();
+            if (chance > 80)
+            {
+                subState = AISubstate.IDLE;
+                timer = Time.time;
+            }
         }
         else if (State == AIState.HUNTING)
         {
-            Player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
-            agent.SetDestination(Player.position);
+            if (target != Player.position)
+            {
+                UpdateDestination();
+            }
             if (Vector3.Distance(this.transform.position, Player.position) <= Range && timer == 0)
             {
+                subState = AISubstate.ATTACKING;
                 EventManager.current.EnemyLightAttackCommand();
                 timer = Time.time;
             }
@@ -47,12 +62,24 @@ public class EnemyAI : MonoBehaviour
             {
                 elapsedTime = Time.time - timer;
             }
-            if (elapsedTime >= 1)
+            if (elapsedTime >= 0.5f)
             {
                 timer = 0;
                 elapsedTime = 0;
             }
 
+        }
+        if (subState == AISubstate.IDLE)
+        {
+            elapsedTime = Time.time - timer;
+            if (elapsedTime < 3)
+            {
+                agent.speed = 0;
+            } else
+            {
+                agent.speed = 1;
+                subState = AISubstate.WALKING;
+            }
         }
         if (this.transform.position != Previous)
         {
@@ -62,13 +89,21 @@ public class EnemyAI : MonoBehaviour
     }
     void UpdateDestination()
     {
-        target = waypoints[waypointIndex].position;
-        agent.SetDestination(target);
+        if (State == AIState.SCOUTING)
+        {
+            target = waypoints[waypointIndex].position;
+            agent.SetDestination(target);
+        }
+        else
+        {
+            Player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+            agent.SetDestination(Player.position);
+        }
     }
     void IterateWaypointIndex()
     {
         waypointIndex++;
-        if (waypointIndex == waypoints.Length)
+        if (waypointIndex >= waypoints.Length)
         {
             waypointIndex = 0;
         }

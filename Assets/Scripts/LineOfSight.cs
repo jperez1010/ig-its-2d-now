@@ -50,11 +50,6 @@ public class LineOfSight : MonoBehaviour
         bool closePos = Physics.Raycast(new Ray(castPoint, Quaternion.Euler(0, 30, 0) * AI.GetDirection()), out hitClosePos, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
         bool closeNeg = Physics.Raycast(new Ray(castPoint, Quaternion.Euler(0, -30, 0) * AI.GetDirection()), out hitCloseNeg, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
         bool farNeg = Physics.Raycast(new Ray(castPoint, Quaternion.Euler(0, -60, 0) * AI.GetDirection()), out hitFarNeg, RayDistance, (1 << LayerMask.NameToLayer("Obstacle")) | (1 << LayerMask.NameToLayer("Player")));
-        Debug.DrawRay(castPoint, AI.GetDirection() * RayDistance);
-        Debug.DrawRay(castPoint, Quaternion.Euler(0, 60, 0) * AI.GetDirection() * RayDistance);
-        Debug.DrawRay(castPoint, Quaternion.Euler(0, 30, 0) * AI.GetDirection() * RayDistance);
-        Debug.DrawRay(castPoint, Quaternion.Euler(0, -30, 0) * AI.GetDirection() * RayDistance);
-        Debug.DrawRay(castPoint, Quaternion.Euler(0, -60, 0) * AI.GetDirection() * RayDistance);
 
         if (middle || farPos || closePos || closeNeg || farNeg)
         {
