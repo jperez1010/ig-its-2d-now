@@ -2101,6 +2101,7 @@ GameObject:
   - component: {fileID: 1058721288}
   - component: {fileID: 1058721290}
   - component: {fileID: 1058721291}
+  - component: {fileID: 1058721292}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2294,6 +2295,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1058721292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058721279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95376a3576138df4f86a91f03aead939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1226331208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,6 +2490,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4672676181492580400, guid: 18b293997b2494546976cd00b5a3920f, type: 3}
   m_PrefabInstance: {fileID: 1595340830}
   m_PrefabAsset: {fileID: 0}
+--- !u!195 &1335645304 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 4672676181492580406, guid: 18b293997b2494546976cd00b5a3920f, type: 3}
+  m_PrefabInstance: {fileID: 1595340830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1404009031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,6 +2604,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4672676181492580405, guid: 18b293997b2494546976cd00b5a3920f, type: 3}
+      propertyPath: agent
+      value: 
+      objectReference: {fileID: 1335645304}
     - target: {fileID: 4672676181492580405, guid: 18b293997b2494546976cd00b5a3920f, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 

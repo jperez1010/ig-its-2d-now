@@ -5,17 +5,22 @@ using System;
 
 public class FireLightAttack : MonoBehaviour
 {
-    DateTime timer;
-    private TimeSpan threshold = new TimeSpan(0, 0, 1);
+    private float timer = 0;
+    private float elapsedTime;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            timer = DateTime.Now;
-        }
-        if (Input.GetKeyUp(KeyCode.Space) && (DateTime.Now - timer) < threshold)
+        if (Input.GetKeyUp(KeyCode.Space) &&  timer == 0)
         {
             EventManager.current.LightAttackCommand();
+            timer = Time.time;
+        }
+        if (timer != 0)
+        {
+            elapsedTime = Time.time - timer;
+        }
+        if (elapsedTime > 0.5f)
+        {
+            timer = 0;
         }
     }
 }

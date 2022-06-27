@@ -6,6 +6,7 @@ using System;
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField]
     NavMeshAgent agent;
     public Transform[] waypoints;
     private Transform Player;

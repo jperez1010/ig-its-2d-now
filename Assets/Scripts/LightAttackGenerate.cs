@@ -40,6 +40,7 @@ public class LightAttackGenerate : MonoBehaviour
         BehaviourComponent.SetDirection(Direction);
 
         AttackInstance.transform.position = Morph.transform.Find("Aim").position + Direction * spawn_distance;
+        Morph.GetComponent<ComboStage>().comboNext();
     }
 
     public Vector3 GetDirection()
