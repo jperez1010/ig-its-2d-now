@@ -7,16 +7,16 @@ public class ComboNode : MonoBehaviour
     private Attacks attack;
     private ComboNode lightAttack;
     private ComboNode heavyAttack;
-    private ComboNode predecessor;
+    private AttackInputType type;
     private int comboLevel;
 
-    public ComboNode(Attacks attack, ComboNode lightAttack, ComboNode heavyAttack, ComboNode predecessor, int comboLevel)
+    public ComboNode(Attacks attack, ComboNode lightAttack, ComboNode heavyAttack, AttackInputType type, int comboLevel)
     {
         this.attack = attack;
         this.lightAttack = lightAttack;
         this.heavyAttack = heavyAttack;
         this.comboLevel = comboLevel;
-        this.predecessor = predecessor;
+        this.type = type;
     }
     public Attacks getAttack()
     {
@@ -50,12 +50,12 @@ public class ComboNode : MonoBehaviour
     {
         this.comboLevel = lvl;
     }
-    public ComboNode getPredecessor()
+    public AttackInputType getType()
     {
-        return this.predecessor;
+        return this.type;
     }
-    public void setPredecessor(ComboNode node)
+    public void setType(AttackInputType type)
     {
-        this.predecessor = node;
+        this.type = type;
     }
 }

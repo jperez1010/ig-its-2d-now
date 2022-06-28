@@ -58,10 +58,10 @@
   <ItemGroup>
     <Compile Include="Assets\Utilities\Ciconia Studio\_Shared Files\Scripts\Demo\UIButton_ShowNext.cs" />
     <Compile Include="Assets\MythomorphStats.cs" />
-    <Compile Include="Assets\Scripts\FireLightAttack.cs" />
+    <Compile Include="Assets\Scripts\FireAttack.cs" />
     <Compile Include="Assets\Scripts\RangeType.cs" />
     <Compile Include="Assets\Scripts\EventManager.cs" />
-    <Compile Include="Assets\Scripts\HeavyAttackGenerate.cs" />
+    <Compile Include="Assets\Scripts\ComboNode.cs" />
     <Compile Include="Assets\PlayerAim.cs" />
     <Compile Include="Assets\HealthbarBehavior.cs" />
     <Compile Include="Assets\Scripts\ComboStage.cs" />
@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\AIStates.cs" />
     <Compile Include="Assets\Scripts\InteractScript.cs" />
     <Compile Include="Assets\Scripts\HarmPlayer.cs" />
+    <Compile Include="Assets\Scripts\AttackInputType.cs" />
     <Compile Include="Assets\Scripts\Grass\GeometryGrassPainter.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\TriggerArea.cs" />
@@ -86,11 +87,11 @@
     <Compile Include="Assets\Scripts\BasicRanged.cs" />
     <Compile Include="Assets\OscillateColor_Point.cs" />
     <Compile Include="Assets\Scripts\EnemyLightAttackGenerate.cs" />
-    <Compile Include="Assets\Scripts\LightAttackGenerate.cs" />
+    <Compile Include="Assets\Scripts\AttackGenerate.cs" />
     <Compile Include="Assets\Scripts\TypeList.cs" />
     <Compile Include="Assets\Scripts\AttackBehaviour.cs" />
     <Compile Include="Assets\OscillateColor.cs" />
-    <Compile Include="Assets\Scripts\FireHeavyAttack.cs" />
+    <Compile Include="Assets\Scripts\MorphCombo.cs" />
     <Compile Include="Assets\EvilAI.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\AttackStats.cs" />
@@ -101,8 +102,6 @@
     <Compile Include="Assets\Scripts\MoveList.cs" />
     <Compile Include="Assets\Scripts\LineOfSight.cs" />
     <Compile Include="Assets\Utilities\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCamera.cs" />
-    <Compile Include="Assets\Scripts\MorphCombo.cs" />
-    <Compile Include="Assets\Scripts\ComboNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\SpriteShadows.shader" />

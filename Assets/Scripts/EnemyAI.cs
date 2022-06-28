@@ -56,7 +56,7 @@ public class EnemyAI : MonoBehaviour
             if (Vector3.Distance(this.transform.position, Player.position) <= Range && timer == 0)
             {
                 subState = AISubstate.ATTACKING;
-                EventManager.current.EnemyLightAttackCommand();
+                //EventManager.current.EnemyLightAttackCommand();
                 timer = Time.time;
             }
             if (timer != 0)

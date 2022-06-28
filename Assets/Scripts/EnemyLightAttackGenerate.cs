@@ -7,11 +7,6 @@ public class EnemyLightAttackGenerate : MonoBehaviour
     [SerializeField]
     GameObject Morph;
     public float SpawnDistance = 0.4f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        EventManager.current.OnEnemyLightAttackCommand += EnemySpawnAttack;
-    }
 
     // Update is called once per frame
     private void EnemySpawnAttack()
