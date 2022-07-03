@@ -6,7 +6,7 @@ public class MoveInfoList : MonoBehaviour
 {
     public static Dictionary<Attacks, MoveInfo> MoveInfo = new Dictionary<Attacks, MoveInfo>()
     {
-        { Attacks.MAGIC_SHOT, new MoveInfo("Magic Shot", 1f, 0.25f, 1, MoveType.MAGIC, RangeType.BASIC_RANGED, Resources.Load<GameObject>("Prefabs/Entities/Circle")) },
+        { Attacks.MAGIC_SHOT, new MoveInfo("Magic Shot", 1f, 0.25f, 1, MoveType.MAGIC, RangeType.BASIC_RANGED, Resources.Load<GameObject>("Prefabs/Entities/ManaBall")) },
         { Attacks.HAT_TRICK, new MoveInfo("Hat Trick", 1f, 0.25f, 1, MoveType.MAGIC, RangeType.BASIC_RANGED, Resources.Load<GameObject>("Prefabs/Entities/Mana Ball"))}
     };
 

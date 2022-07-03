@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyDebris : MonoBehaviour
 {
     private float currentTime;
-    private float finalTime = 2f;
+    private float finalTime = 3f;
     [SerializeField]
 
 

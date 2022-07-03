@@ -34,6 +34,10 @@ public class BasicRanged : AttackBehaviour
             //other.gameObject.transform.Translate(direction * this.GetComponent<AttackStats>().knockback / weight);
             Destroy(gameObject);
         }
+        if (other.tag == "Obstacle")
+        {
+            Destroy(this.gameObject);
+        }
         if (other.tag == "Player")
         {
             Camera.main.GetComponent<Health>().Damage(this.GetComponent<AttackStats>().damage);

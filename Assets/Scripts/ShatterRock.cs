@@ -8,9 +8,11 @@ public class ShatterRock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("it worked");
-        Instantiate(shattered, transform.position, transform.rotation);
-        GetComponent<Rigidbody>().AddExplosionForce(200, transform.position, 5);
-        Destroy(gameObject);
+        if (other.CompareTag("Attack"))
+        {
+            Instantiate(shattered, transform.position, transform.rotation);
+            GetComponent<Rigidbody>().AddExplosionForce(200, transform.position, 5);
+            Destroy(gameObject);
+        }
     }
 }
