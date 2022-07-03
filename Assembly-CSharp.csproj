@@ -62,7 +62,7 @@
     <Compile Include="Assets\Scripts\RangeType.cs" />
     <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\ComboNode.cs" />
-    <Compile Include="Assets\PlayerAim.cs" />
+    <Compile Include="Assets\Scripts\PlayerAim.cs" />
     <Compile Include="Assets\HealthbarBehavior.cs" />
     <Compile Include="Assets\Scripts\ComboStage.cs" />
     <Compile Include="Assets\HitboxFollower.cs" />
@@ -89,11 +89,13 @@
     <Compile Include="Assets\Scripts\EnemyLightAttackGenerate.cs" />
     <Compile Include="Assets\Scripts\AttackGenerate.cs" />
     <Compile Include="Assets\Scripts\TypeList.cs" />
+    <Compile Include="Assets\DestroyDebris.cs" />
     <Compile Include="Assets\Scripts\AttackBehaviour.cs" />
     <Compile Include="Assets\OscillateColor.cs" />
     <Compile Include="Assets\Scripts\MorphCombo.cs" />
     <Compile Include="Assets\EvilAI.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\ShatterRock.cs" />
     <Compile Include="Assets\Scripts\AttackStats.cs" />
     <Compile Include="Assets\Utilities\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCam.cs" />
     <Compile Include="Assets\Utilities\Ciconia Studio\_Shared Files\Scripts\Demo\SuperCamera.cs" />
