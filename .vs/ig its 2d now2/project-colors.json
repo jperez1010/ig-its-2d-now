@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d6bc1296-767e-85e9-9c84-f55c1c9612fb": {
+      "ProjectGuid": "d6bc1296-767e-85e9-9c84-f55c1c9612fb",
+      "DisplayName": "Assembly-CSharp",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "bc0891b4-af58-a38e-c2f5-5669ae31b370": {
+      "ProjectGuid": "bc0891b4-af58-a38e-c2f5-5669ae31b370",
+      "DisplayName": "FMODUnity",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

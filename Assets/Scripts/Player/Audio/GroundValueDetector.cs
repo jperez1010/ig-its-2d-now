@@ -4,7 +4,7 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
-public class FMODGroundValueDetector : MonoBehaviour
+public class GroundValueDetector : MonoBehaviour
 {
     private int MaterialValue;
     private RaycastHit rh;
