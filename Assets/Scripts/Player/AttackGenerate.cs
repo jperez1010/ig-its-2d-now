@@ -7,6 +7,7 @@ public class AttackGenerate : MonoBehaviour
 
     [SerializeField]
     public WaitTimeHandler waitTimeHandler;
+    public Animator anim;
 
     public void SpawnAttack(ActionEnum actionEnum)
     {
@@ -14,6 +15,13 @@ public class AttackGenerate : MonoBehaviour
         if (result.Item1)
         {
             Debug.Log(actionEnum);
+            anim.SetTrigger("Cast");
+            if (result.Item2)
+            {
+                GameObject attack = Instantiate(result.Item2);
+                attack.transform.position = this.transform.position + GetDirection() * spawn_distance;
+                attack.GetComponent<HarmEnemy>().direction = GetDirection();
+            }
         }
     }
 

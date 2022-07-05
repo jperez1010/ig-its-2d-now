@@ -7,7 +7,7 @@ public class HarmEnemy : MonoBehaviour
     public Vector3 direction;
     public int damage = 1;
     public float speed = 0.1f;
-    public int timer;
+    public float timer;
     public float push = 10.0f;
 
     void Start()
@@ -18,9 +18,13 @@ public class HarmEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += 1;
+        timer += Time.deltaTime;
+        if (timer <= 0.28f)
+        {
+            return;
+        }
         this.transform.position = this.transform.position + speed * direction;
-        if (timer >= 60 * 2)
+        if (timer >= 5)
         {
             Destroy(this.gameObject);
         }

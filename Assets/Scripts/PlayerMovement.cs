@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove;
     public Vector3 dir;
     public Rigidbody rb;
-    WaitTimeHandler waitTimeHandler;
+    [SerializeField]
+    public WaitTimeHandler waitTimeHandler;
 
     /// <summary>
     /// TO FIX
@@ -23,18 +24,18 @@ public class PlayerMovement : MonoBehaviour
         Vector3 newDir = GetMovementInput();
         newDir = DetectObstacleCollisions(newDir);
         dir = newDir;
-        if (IsMovementAllowed())
+        if (dir.magnitude > movementThreshold && IsMovementAllowed())
         {
             if (!dir.Equals(Vector3.zero))
             {
                 FlipPlayer();
             }
-            if (IsMovementAllowed() && canMove)
-            {
-                transform.position += dir.normalized * Time.deltaTime * speed;
-            }
-            anim.SetBool("Walking", dir.magnitude > movementThreshold);
         }
+        if (canMove)
+        {
+            transform.position += dir.normalized * Time.deltaTime * speed;
+        }
+        anim.SetBool("Walking", dir.magnitude > movementThreshold);
     }
 
     private Vector3 GetMovementInput()
@@ -103,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsMovementAllowed()
     {
-        return false;//waitTimeHandler.GetNextNode(ActionEnum.MOVEMENT).Item1;
+        return waitTimeHandler.GetNextNode(ActionEnum.MOVEMENT).Item1;
     }
 
 }

@@ -2259,7 +2259,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7343726852654902385, guid: b5ac3b8e139e1e34d9ddf7f53841583a, type: 3}
+  m_Sprite: {fileID: -6812332349798644459, guid: b5ac3b8e139e1e34d9ddf7f53841583a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2278,7 +2278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058721279}
   m_LocalRotation: {x: -0, y: 0.86602545, z: 0.49999994, w: 0}
-  m_LocalPosition: {x: -3.4546852, y: -0.991, z: -36.622}
+  m_LocalPosition: {x: -3.4546852, y: -1.094, z: -36.622}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2300,6 +2300,7 @@ MonoBehaviour:
   canMove: 0
   dir: {x: 0, y: 0, z: 0}
   rb: {fileID: 1058721291}
+  waitTimeHandler: {fileID: 1058721294}
   anim: {fileID: 1058721286}
 --- !u!95 &1058721286
 Animator:
@@ -2336,6 +2337,7 @@ MonoBehaviour:
   spawn_distance: 0.4
   fireposition: {fileID: 1058721283}
   waitTimeHandler: {fileID: 1058721294}
+  anim: {fileID: 1058721286}
 --- !u!114 &1058721290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2413,6 +2415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348239a06a866d54e8f15edf0394d819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manaBall: {fileID: 2588901467413547590, guid: 3adff452f4facba4f8ea3bb592511b35, type: 3}
 --- !u!1 &1136826473
 GameObject:
   m_ObjectHideFlags: 0

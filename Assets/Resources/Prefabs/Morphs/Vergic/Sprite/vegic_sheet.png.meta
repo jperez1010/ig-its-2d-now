@@ -146,12 +146,12 @@ TextureImporter:
       name: vegic_sheet_0
       rect:
         serializedVersion: 2
-        x: 290
-        y: 441
+        x: 278
+        y: 1547
         width: 226
         height: 403
       alignment: 9
-      pivot: {x: 0.44368467, y: 0.61016315}
+      pivot: {x: 0.4286171, y: 0.37676957}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,12 +167,12 @@ TextureImporter:
       name: vegic_sheet_1
       rect:
         serializedVersion: 2
-        x: 523
-        y: 526
+        x: 516
+        y: 1626
         width: 261
         height: 374
       alignment: 9
-      pivot: {x: 0.4705537, y: 0.3897106}
+      pivot: {x: 0.33539638, y: 0.11605982}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,11 +189,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 797
-        y: 441
+        y: 1525
         width: 189
         height: 377
       alignment: 9
-      pivot: {x: 0.50504106, y: 0.6011697}
+      pivot: {x: 0.32820314, y: 0.37421674}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,12 +209,12 @@ TextureImporter:
       name: vegic_sheet_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 439
-        width: 230
+        x: 6
+        y: 1546
+        width: 268
         height: 401
       alignment: 9
-      pivot: {x: 0.50000006, y: 0.61920714}
+      pivot: {x: 0.33616915, y: 0.37966365}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -331,6 +331,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: vegic_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 313
+        height: 291
+      alignment: 9
+      pivot: {x: 0.4831175, y: 0.49313805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073fffc0b4f81764bbc100135257b88d
+      internalID: -387333743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -343,6 +364,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       vegic_sheet_0: -7343726852654902385
+      vegic_sheet_9: -387333743
       vegic_sheet_8: 768711310640557249
       vegic_sheet_3: -6812332349798644459
       vegic_sheet_7: 863732234054152896
