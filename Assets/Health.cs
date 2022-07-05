@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     }
     private void Update()
     {
+        //--health;
         if (health > maxHealth)
         {
             health = maxHealth;
