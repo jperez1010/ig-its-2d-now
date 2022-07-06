@@ -40,5 +40,10 @@ public class HarmEnemy : MonoBehaviour
             other.gameObject.transform.Translate(direction * push / weight);
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "Obstacle")
+        {
+            Debug.Log("Hit");
+            Destroy(gameObject);
+        }
     }
 }
