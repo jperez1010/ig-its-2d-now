@@ -1,5 +1,85 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8988425365455070208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Enemy Movement
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Enemy Movement
+  Guid:
+    Data1: -696596559
+    Data2: 1180186987
+    Data3: 1438695347
+    Data4: -1098160108
+  Banks:
+  - {fileID: 8755533210066657235}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7080473053003491911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave Ambient/Transition
+  m_EditorClassIdentifier: 
+  Name: Transition
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3143791391
+    data2: 205786524
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6845698853076916294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Cave Ambient
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Cave Ambient
+  Guid:
+    Data1: 1142364999
+    Data2: 1146210088
+    Data3: 785536948
+    Data4: 1766913453
+  Banks:
+  - {fileID: 8755533210066657235}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 959647203064163032}
+  - {fileID: -7080473053003491911}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 127664
 --- !u!114 &-4043719598801520282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,13 +121,14 @@ MonoBehaviour:
   - {fileID: 8755533210066657235}
   EditorEvents:
   - {fileID: 751307386377354805}
-  - {fileID: 3338714351484406336}
+  - {fileID: -6845698853076916294}
+  - {fileID: -8988425365455070208}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8755533210066657235}
   StringsBanks:
   - {fileID: 281983155615444040}
-  cacheTime: 637907656605583000
+  cacheTime: 637940413943997126
   cacheVersion: 10
 --- !u!114 &281983155615444040
 MonoBehaviour:
@@ -64,10 +145,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637907656605583000
+  lastModified: 637940413943997126
   FileSizes:
   - Name: 
-    Value: 930
+    Value: 1164
   Exists: 1
 --- !u!114 &751307386377354805
 MonoBehaviour:
@@ -98,6 +179,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &959647203064163032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave Ambient/Fight
+  m_EditorClassIdentifier: 
+  Name: Fight
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 946086257
+    data2: 171631468
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &1584578047316172413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,33 +227,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &3338714351484406336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Cave_Music
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Cave_Music
-  Guid:
-    Data1: 1142364999
-    Data2: 1146210088
-    Data3: 785536948
-    Data4: 1766913453
-  Banks:
-  - {fileID: 8755533210066657235}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 148687
 --- !u!114 &8755533210066657235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +242,6 @@ MonoBehaviour:
   Path: Assets/FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637907656605563046
+  lastModified: 637940413943977132
   FileSizes: []
   Exists: 1
