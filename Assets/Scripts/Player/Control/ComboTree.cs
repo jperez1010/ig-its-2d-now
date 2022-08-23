@@ -15,22 +15,21 @@ public class ComboTree
     {
         if (comboNodes[currentNode].DecreaseTimer())
         {
-            GetNextNode(ActionEnum.DELAY);
+            TraverseNextNode(ActionEnum.DELAY);
         }
     }
 
-    public (bool, GameObject) GetNextNode(ActionEnum actionEnum)
+    public NodeData TraverseNextNode(ActionEnum actionEnum)
     {
-        (int, GameObject) result = comboNodes[currentNode].GetNextNode(actionEnum);
-        int index = result.Item1;
-        GameObject attack = result.Item2;
-        if (index == -1)
+        WaitTime waitTime = comboNodes[currentNode].GetWaitTime(actionEnum);
+        if (waitTime.IsWaitTimeOver())
         {
-            return (false, null);
+            NodeData data = waitTime.GetNodeData();
+            currentNode = data.GetNextNode();
+            comboNodes[currentNode].ResetTimer();
+            return data;
         }
-        currentNode = index;
-        comboNodes[currentNode].ResetTimer();
-        return (true, attack);
+        return null;
     }
 
     public ComboNode GetCurrentNode()
