@@ -17,9 +17,9 @@ public class WaitTimeHandler : MonoBehaviour
         DecreaseTimer();
     }
 
-    public NodeData GetNextNodeData(ActionEnum actionEnum)
+    public (bool, GameObject) GetNextNode(ActionEnum actionEnum)
     {
-        return comboTree.TraverseNextNode(actionEnum);
+        return comboTree.GetNextNode(actionEnum);
     }
 
     private void DecreaseTimer()

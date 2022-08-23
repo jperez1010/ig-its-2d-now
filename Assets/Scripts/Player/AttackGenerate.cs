@@ -11,28 +11,22 @@ public class AttackGenerate : MonoBehaviour
 
     public void SpawnAttack(ActionEnum actionEnum)
     {
-        AttackNodeData data =  (AttackNodeData) waitTimeHandler.GetNextNodeData(actionEnum);
-        if (data != null)
+        (bool, GameObject) result = waitTimeHandler.GetNextNode(actionEnum);
+        if (result.Item1)
         {
+            Debug.Log(actionEnum);
             anim.SetTrigger("Cast");
-            Vector3 aimDirection = GetDirection();
-            ChangeDirection(aimDirection);
-            if (data.attack)
+            if (result.Item2)
             {
-                GameObject attack = Instantiate(data.attack);
-                attack.transform.position = this.transform.position + aimDirection * spawn_distance;
-                attack.GetComponent<HarmEnemy>().direction = aimDirection;
+                GameObject attack = Instantiate(result.Item2);
+                attack.transform.position = this.transform.position + GetDirection() * spawn_distance;
+                attack.GetComponent<HarmEnemy>().direction = GetDirection();
             }
         }
     }
 
     public Vector3 GetDirection()
     {
-        return GetComponent<PlayerAim>().GetDirection().normalized;
-    }
-
-    public void ChangeDirection(Vector3 aimDirection)
-    {
-        GetComponent<PlayerMovement>().FlipPlayer(aimDirection.x > 0);
-    }
+        return GameObject.Find("Player").GetComponentInChildren<PlayerAim>().GetDirection().normalized;
+    }   
 }

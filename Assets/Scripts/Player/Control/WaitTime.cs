@@ -1,17 +1,26 @@
-using System;
 using UnityEngine;
 
 public class WaitTime
 {
-
     public float maxValue;
     public float currentValue;
-    public NodeData nodeData;
+    public int nextNode;
+    public GameObject attack;
 
-    public WaitTime(float maxValue, NodeData nodeData)
+    public WaitTime(float maxValue) : this(maxValue, 0)
+    {
+
+    }
+    public WaitTime(float maxValue, int nextNode) : this(maxValue, nextNode, null)
+    {
+    
+    }
+
+    public WaitTime(float maxValue, int nextNode, GameObject attack)
     {
         this.maxValue = maxValue;
-        this.nodeData = nodeData;
+        this.nextNode = nextNode;
+        this.attack = attack;
         ResetTimer();
     }
 
@@ -29,57 +38,17 @@ public class WaitTime
         return currentValue;
     }
 
-    public bool IsWaitTimeOver()
+    public (int, GameObject) GetNextNode()
     {
-        return currentValue == 0f;
+        if (currentValue == 0)
+        {
+            return (nextNode, attack);
+        }
+        return (-1, null);
     }
 
-    public NodeData GetNodeData()
-    {
-        return nodeData;
-    }
-}
-
-public abstract class NodeData
-{
-    protected int nextNode;
-
-    public int GetNextNode()
-    {
-        return nextNode;
-    }
-}
-
-public class AttackNodeData : NodeData
-{
-    public GameObject attack;
-    
-    public AttackNodeData(GameObject attack) : this(attack, 0) { }
-    
-    public AttackNodeData(GameObject attack, int nextNode)
-    {
-        this.attack = attack;
-        this.nextNode = nextNode;
-    }
-}
-
-public class MovementNodeData : NodeData
-{
-    public MovementNodeData() : this(0) { }
-    
-    public MovementNodeData(int nextNode)
+    public void SetNextNode(int nextNode)
     {
         this.nextNode = nextNode;
     }
-}
-
-public class DelayNodeData : NodeData
-{
-    public DelayNodeData() : this(0) { }
-
-    public DelayNodeData(int nextNode)
-    {
-        this.nextNode = nextNode;
-    }
-
 }

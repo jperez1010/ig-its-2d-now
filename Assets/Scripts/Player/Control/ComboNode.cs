@@ -10,6 +10,20 @@ public class ComboNode
         this.waitTimes = waitTimes;
     }
 
+    public ComboNode(ActionEnum[] actionEnums, float[] maxValues, int[] nextNodes)
+    {
+        waitTimes = new Dictionary<ActionEnum, WaitTime>();
+        for (int i = 0; i < actionEnums.Length; i++)
+        {
+            waitTimes.Add(actionEnums[i], new WaitTime(maxValues[i], nextNodes[i]));
+        }
+    }
+
+    public Dictionary<ActionEnum, WaitTime> GetWaitTimes()
+    {
+        return waitTimes;
+    }
+
     public WaitTime GetWaitTime(ActionEnum actionEnum)
     {
         return waitTimes[actionEnum];
@@ -36,4 +50,8 @@ public class ComboNode
         return false;
     }
 
+    public (int, GameObject) GetNextNode(ActionEnum actionEnum)
+    {
+        return waitTimes[actionEnum].GetNextNode();
+    }
 }
