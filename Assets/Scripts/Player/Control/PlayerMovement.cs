@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float speed = 5f;
+    public MythomorphStats mythomorphStats;
     public bool canMove;
     public Vector3 dir;
     public Rigidbody rb;
+    public SpriteRenderer spriteRenderer;
     [SerializeField]
     public WaitTimeHandler waitTimeHandler;
 
@@ -28,12 +29,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!dir.Equals(Vector3.zero))
             {
-                FlipPlayer();
+                FlipPlayer(IsMovingRight());
             }
         }
         if (canMove)
         {
-            transform.position += dir.normalized * Time.deltaTime * speed;
+            transform.position += dir.normalized * Time.deltaTime * mythomorphStats.movementSpeed;
         }
         anim.SetBool("Walking", dir.magnitude > movementThreshold);
     }
@@ -90,21 +91,19 @@ public class PlayerMovement : MonoBehaviour
         return newDir;
     }
 
-    private void FlipPlayer()
+    public void FlipPlayer(bool facingRight)
     {
-        if (dir.x > 0)
-        {
-            this.transform.rotation = Quaternion.Euler(-120, 0, 180);
-        }
-        else
-        {
-            this.transform.rotation = Quaternion.Euler(60, 0, 0);
-        }
+        spriteRenderer.flipX = !facingRight;
+    }
+
+    public bool IsMovingRight()
+    {
+        return (dir.x > 0);
     }
 
     private bool IsMovementAllowed()
     {
-        return waitTimeHandler.GetNextNode(ActionEnum.MOVEMENT).Item1;
+        return waitTimeHandler.GetNextNodeData(ActionEnum.MOVEMENT) != null;
     }
 
 }

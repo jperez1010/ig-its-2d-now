@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class MythomorphStats : MonoBehaviour
 {
-    public float weight = 1;
+    public float movementSpeed;
 
 }

@@ -36,7 +36,7 @@ public class HarmEnemy : MonoBehaviour
         {
             Debug.Log(direction * push);
             other.gameObject.GetComponent<HealthHandler>().Damage(damage);
-            float weight = other.gameObject.GetComponent<MythomorphStats>().weight;
+            float weight = 1;
             other.gameObject.transform.Translate(direction * push / weight);
             Destroy(gameObject);
         }
