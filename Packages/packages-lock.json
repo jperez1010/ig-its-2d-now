@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.inklestudios.ink-unity-integration": {
+      "version": "file:C:/Users/waffl/Downloads/ink-unity-integration-master/Packages/Ink",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "7.0.5",
       "depth": 0,

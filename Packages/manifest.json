@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.inklestudios.ink-unity-integration": "file:C:/Users/waffl/Downloads/ink-unity-integration-master/Packages/Ink",
     "com.unity.2d.animation": "7.0.5",
     "com.unity.collab-proxy": "1.15.17",
     "com.unity.ide.rider": "3.0.14",

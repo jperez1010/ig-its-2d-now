@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RiverDown
+  m_Name: Waterfall
   m_Shader: {fileID: -6465566751694194690, guid: b462ff5a77441024b9a3dd974622494a, type: 3}
   m_ValidKeywords:
   - _ALPHATEST_ON
@@ -63,13 +63,13 @@ Material:
     - _DstBlend: 10
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
-    - _Foam_Cuttoff: 9.32
+    - _Foam_Cuttoff: 1.07
     - _Foam_Depth: 7.95
-    - _Foam_Fade: 0.14
-    - _Foam_Offset: 0.5
-    - _Foam_Size: 15.6
-    - _Foamn_Speed: -0.03
-    - _High_Frequency: 0
+    - _Foam_Fade: 0.8
+    - _Foam_Offset: -4.32
+    - _Foam_Size: 13.33
+    - _Foamn_Speed: 0.1
+    - _High_Frequency: 320
     - _Metalic: 0
     - _Noise_Scale: 10
     - _Normal_Speed: 0.5
@@ -81,10 +81,10 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 4
     - _RequireSplitLighting: 0
-    - _Ripple_Dissolve: 11.15
-    - _Ripple_Scale: 0.01
-    - _Ripple_Speed: 1.09
-    - _Smoothness: -29.33
+    - _Ripple_Dissolve: 23.44
+    - _Ripple_Scale: 7.07
+    - _Ripple_Speed: 5.3
+    - _Smoothness: -32.51
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -106,13 +106,13 @@ Material:
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
-    - _WaveSPeed: 0.28
-    - _Wave_Amplitude: 0
+    - _WaveSPeed: 1.7
+    - _Wave_Amplitude: 0.42
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 3
     - _ZTestTransparent: 4
     - _ZWrite: 0
-    - _transparency: 73.3
+    - _transparency: 2.93
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
