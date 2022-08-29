@@ -23,7 +23,7 @@ GameObject:
   m_Layer: 6
   m_Name: Vergic
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 386cd433da31dab4fb4408903a314938, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -156,9 +156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d461d3799695bb4d85312453ce7074d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mythomorphStats: {fileID: 0}
   canMove: 0
   dir: {x: 0, y: 0, z: 0}
   rb: {fileID: 8760887667599630011}
+  spriteRenderer: {fileID: 0}
   waitTimeHandler: {fileID: 8760887667599630014}
   anim: {fileID: 8760887667599630006}
 --- !u!114 &8760887667599630007
