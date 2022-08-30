@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         dir = newDir;
         if (dir.magnitude > movementThreshold && IsMovementAllowed())
         {
-            if (!dir.Equals(Vector3.zero))
+            if (Mathf.Abs(dir.x) > Mathf.Epsilon)
             {
                 FlipPlayer(IsMovingRight());
             }
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void FlipPlayer(bool facingRight)
     {
-        spriteRenderer.flipX = !facingRight;
+        spriteRenderer.flipX = facingRight;
     }
 
     public bool IsMovingRight()

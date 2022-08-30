@@ -14,7 +14,7 @@ public class MythoGemUI : MonoBehaviour
 
     void SwapMorph_OnCurrentMorphAltered(object sender, System.EventArgs _)
     {
-        int i = (int) sender;
+        int i = (int) sender - 1;
         for (int k = 0; k < 4; k++)
         {
             SetImageActive(k, true);
@@ -24,9 +24,12 @@ public class MythoGemUI : MonoBehaviour
 
     public void SetImageActive(int i, bool value)
     {
-        if (MorphImages[i] != null)
+        if (i >= 0 && i < MorphImages.Length)
         {
-            MorphImages[i].transform.GetChild(0).gameObject.SetActive(value);
+            if (MorphImages[i] != null)
+            {
+                MorphImages[i].transform.GetChild(0).gameObject.SetActive(value);
+            }
         }
     }
 }

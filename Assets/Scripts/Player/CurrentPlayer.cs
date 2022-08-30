@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class CurrentPlayer : MonoBehaviour
 {
-    public int currentMorph;
+    public int currentMorph = 0;
+    public GameObject spawnLocation;
     public GameObject[] morphObjects;
     public event EventHandler OnCurrentMorphAltered;
+
+    private void Start()
+    {
+        SpawnMorph(0, spawnLocation.transform.position);
+    }
 
     void Update()
     {
@@ -18,38 +24,42 @@ public class CurrentPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SwapMorph(0);
+            SwapMorph(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SwapMorph(1);
+            SwapMorph(2);
         }
     }
 
     void SwapMorph(int i)
     {
-        if (currentMorph == i)
-        {
-            return;
-        }
         int previous = currentMorph;
         currentMorph = i;
+        if (previous == i)
+        {
+            currentMorph = 0;
+        }
         ActivateCurrentMythomorph(previous);
-        OnCurrentMorphAltered?.Invoke(i, EventArgs.Empty);
     }
 
     public void ActivateCurrentMythomorph(int previous)
     {
-        for (int k = 0; k < 4; k++)
+        for (int k = 0; k < 5; k++)
         {
             if (morphObjects[k])
             {
                 morphObjects[k].SetActive(false);
             }
         }
-        Vector3 previousPos = morphObjects[previous].transform.position;
-        morphObjects[currentMorph].transform.position = previousPos;
-        morphObjects[currentMorph].SetActive(true);
+        SpawnMorph(currentMorph, morphObjects[previous].transform.position);
+    }
+
+    public void SpawnMorph(int index, Vector3 position)
+    {
+        morphObjects[index].transform.position = position;
+        morphObjects[index].SetActive(true);
+        OnCurrentMorphAltered?.Invoke(index, EventArgs.Empty);
     }
 
     public GameObject GetCurrentMorph()
