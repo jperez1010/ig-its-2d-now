@@ -27,7 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-7080473053003491911
+--- !u!114 &-7973089325363056864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,21 +37,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Cave Ambient/Transition
+  m_Name: parameter:/Music/Progress Stage
   m_EditorClassIdentifier: 
-  Name: Transition
+  Name: Progress Stage
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 3143791391
-    data2: 205786524
+    data1: 1366968446
+    data2: 2954974041
   Type: 0
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-6845698853076916294
+--- !u!114 &-7727848246481011163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,25 +61,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Cave Ambient
+  m_Name: event:/Music/Enviroment Physic Sounds
   m_EditorClassIdentifier: 
-  Path: event:/Music/Cave Ambient
+  Path: event:/Music/Enviroment Physic Sounds
   Guid:
-    Data1: 1142364999
-    Data2: 1146210088
-    Data3: 785536948
-    Data4: 1766913453
+    Data1: -1240445886
+    Data2: 1257758798
+    Data3: -240654961
+    Data4: -155995376
   Banks:
   - {fileID: 8755533210066657235}
   IsStream: 1
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters:
-  - {fileID: 959647203064163032}
-  - {fileID: -7080473053003491911}
+  - {fileID: -4918764155430792381}
   MinDistance: 1
   MaxDistance: 20
-  Length: 127664
+  Length: 0
+--- !u!114 &-4918764155430792381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Enviroment Physic Sounds/Enviromental
+  m_EditorClassIdentifier: 
+  Name: Enviromental
+  StudioPath: 
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 3933528321
+    data2: 742440297
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-4043719598801520282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +127,82 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-3325638108544845992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Fight
+  m_EditorClassIdentifier: 
+  Name: Fight
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 946086257
+    data2: 171631468
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3324768467031247680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dialogue Voice/Parameter 2
+  m_EditorClassIdentifier: 
+  Name: Parameter 2
+  StudioPath: 
+  Min: 0
+  Max: 30
+  Default: 0
+  ID:
+    data1: 3124840316
+    data2: 1315746692
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2536179060561245959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Dialogue Voice
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Dialogue Voice
+  Guid:
+    Data1: -987087675
+    Data2: 1297019709
+    Data3: 884436110
+    Data4: 1332679744
+  Banks:
+  - {fileID: 8755533210066657235}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3324768467031247680}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,15 +220,49 @@ MonoBehaviour:
   - {fileID: 8755533210066657235}
   EditorEvents:
   - {fileID: 751307386377354805}
-  - {fileID: -6845698853076916294}
   - {fileID: -8988425365455070208}
+  - {fileID: 7006774336985269126}
+  - {fileID: 867221060401064490}
+  - {fileID: -7727848246481011163}
+  - {fileID: 5059432152686597706}
+  - {fileID: 8494196574186155013}
+  - {fileID: -2536179060561245959}
+  - {fileID: 101010173100065402}
+  - {fileID: 7540551041074700938}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8755533210066657235}
   StringsBanks:
   - {fileID: 281983155615444040}
-  cacheTime: 637967937560000000
+  cacheTime: 637975363953678226
   cacheVersion: 10
+--- !u!114 &101010173100065402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Water/WaterFall
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Water/WaterFall
+  Guid:
+    Data1: -1306791402
+    Data2: 1314772635
+    Data3: 1849597835
+    Data4: -1066499092
+  Banks:
+  - {fileID: 8755533210066657235}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 62000
 --- !u!114 &281983155615444040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,10 +278,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637967937560000000
+  lastModified: 637975363953678226
   FileSizes:
   - Name: 
-    Value: 1164
+    Value: 1994
   Exists: 1
 --- !u!114 &751307386377354805
 MonoBehaviour:
@@ -179,7 +312,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &959647203064163032
+--- !u!114 &867221060401064490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,21 +321,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Cave Ambient/Fight
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Combat/Light
   m_EditorClassIdentifier: 
-  Name: Fight
-  StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 946086257
-    data2: 171631468
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  Path: event:/Player/Combat/Light
+  Guid:
+    Data1: 783372831
+    Data2: 1314394351
+    Data3: -1036796287
+    Data4: -1366181470
+  Banks:
+  - {fileID: 8755533210066657235}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4033428246780377301}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1584578047316172413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +364,215 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &4033428246780377301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Light/Magic Slash
+  m_EditorClassIdentifier: 
+  Name: Magic Slash
+  StudioPath: 
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 3190001180
+    data2: 1240923935
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5059432152686597706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music
+  Guid:
+    Data1: 1142364999
+    Data2: 1146210088
+    Data3: 785536948
+    Data4: 1766913453
+  Banks:
+  - {fileID: 8755533210066657235}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6891979388537895384}
+  - {fileID: -3325638108544845992}
+  - {fileID: 7454559314144215231}
+  - {fileID: -7973089325363056864}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 199292
+--- !u!114 &6098017448156933848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Heavy/Mana Ball
+  m_EditorClassIdentifier: 
+  Name: Mana Ball
+  StudioPath: 
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 3160949223
+    data2: 2215313049
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6891979388537895384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Intense
+  m_EditorClassIdentifier: 
+  Name: Intense
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 1695244013
+    data2: 771169372
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7006774336985269126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Combat/Heavy
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Combat/Heavy
+  Guid:
+    Data1: 328312839
+    Data2: 1169259545
+    Data3: 1506949763
+    Data4: -722115528
+  Banks:
+  - {fileID: 8755533210066657235}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6098017448156933848}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7454559314144215231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Transition
+  m_EditorClassIdentifier: 
+  Name: Transition
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3143791391
+    data2: 205786524
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7540551041074700938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Water/RiverStream
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Water/RiverStream
+  Guid:
+    Data1: 273166964
+    Data2: 1085786399
+    Data3: -690916677
+    Data4: 213604952
+  Banks:
+  - {fileID: 8755533210066657235}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 37442
+--- !u!114 &8494196574186155013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Cave Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Cave Ambience
+  Guid:
+    Data1: -1976289092
+    Data2: 1219998497
+    Data3: -886653020
+    Data4: 1610401733
+  Banks:
+  - {fileID: 8755533210066657235}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 110402
 --- !u!114 &8755533210066657235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +588,6 @@ MonoBehaviour:
   Path: Assets/FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637967937560000000
+  lastModified: 637975363953658232
   FileSizes: []
   Exists: 1
