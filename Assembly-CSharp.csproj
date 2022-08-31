@@ -131,6 +131,7 @@
     <Compile Include="Assets\Scripts\Morph\Lutridge\LutridgeComboTreePreset.cs" />
     <Compile Include="Assets\OscillateColor.cs" />
     <Compile Include="Assets\Resources\Prefabs\Environment\Shaders\Water\ToonWaterShader-master\Assets\Scripts\CameraDepthTextureMode.cs" />
+    <Compile Include="Assets\Scripts\Entities\RotateEntity.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\MorphCombo.cs" />
     <Compile Include="Assets\EvilAI.cs" />
@@ -153,7 +154,6 @@
     <Compile Include="Assets\Utilities\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCamera.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\Entities\RotateEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -49,6 +49,7 @@ public class CurrentPlayer : MonoBehaviour
         {
             if (morphObjects[k])
             {
+                morphObjects[k].GetComponent<RotateEntity>().angle = morphObjects[previous].GetComponent<RotateEntity>().angle;
                 morphObjects[k].SetActive(false);
             }
         }
