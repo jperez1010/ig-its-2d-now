@@ -41,7 +41,7 @@ public class StartGame : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("DemoCave.1");
         }
     }
 }
