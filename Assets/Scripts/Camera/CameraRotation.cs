@@ -7,11 +7,12 @@ public class CameraRotation : MonoBehaviour
 {
     private CameraFollower follower;
     public CameraRotator[] rotators;
-    public Vector3 angle;
+    public float angle = 0f;
     public event EventHandler OnAngleAltered;
 
     private void Start()
     {
+        angle = 0f;
         follower = GetComponent<CameraFollower>();
     }
 
@@ -27,9 +28,10 @@ public class CameraRotation : MonoBehaviour
         }
     }
 
-    void SetAngle(Vector3 angle)
+    void SetAngle(float angle)
     {
-        transform.eulerAngles = angle;
+        this.angle = angle;
+        transform.eulerAngles = new Vector3(60, angle, 0);
         OnAngleAltered?.Invoke(angle, EventArgs.Empty);
     }
 }

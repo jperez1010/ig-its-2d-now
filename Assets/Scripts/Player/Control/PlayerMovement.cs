@@ -11,14 +11,19 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     [SerializeField]
     public WaitTimeHandler waitTimeHandler;
+    private RotateEntity rotateEntity;
 
     /// <summary>
     /// TO FIX
     /// </summary>
 
     public Animator anim;
-
     private double movementThreshold = 0.2;
+
+    private void Start()
+    {
+        rotateEntity = GetComponent<RotateEntity>();
+    }
 
     private void Update()
     {
@@ -34,10 +39,19 @@ public class PlayerMovement : MonoBehaviour
         }
         if (canMove)
         {
-            transform.position += dir.normalized * Time.deltaTime * mythomorphStats.movementSpeed;
+            transform.position += mythomorphStats.movementSpeed * Time.deltaTime * GetAngledDirection(dir.normalized);
         }
         anim.SetBool("Walking", dir.magnitude > movementThreshold);
     }
+
+    private Vector3 GetAngledDirection(Vector3 dir)
+    {
+        float alpha = rotateEntity.angle * Mathf.PI / 180;
+        Vector3 A = dir.x * new Vector3(Mathf.Cos(alpha), 0, -Mathf.Sin(alpha));
+        Vector3 B = dir.z * new Vector3(Mathf.Sin(alpha), 0, Mathf.Cos(alpha));
+        return A + B;
+    }
+
 
     private Vector3 GetMovementInput()
     {

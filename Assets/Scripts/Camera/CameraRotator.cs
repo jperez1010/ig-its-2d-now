@@ -8,19 +8,18 @@ public class CameraRotator : MonoBehaviour
     public RotationAngle angleB;
 
     public float theta;
-    public float phidel = (Mathf.PI/ 180) * 5;
-
+    public float phidel = 1e-5f;
 
     private void Start()
     {
         theta = GetAngle(angleA.transform.position, angleB.transform.position);
     }
 
-    public Vector3 GetLerp(Vector3 position)
+    public float GetLerp(Vector3 position)
     {
         float phi1 = GetAngle(angleA.transform.position, position);
         float t = phi1 / theta;
-        return Vector3.Lerp(angleA.rotationAngle, angleB.rotationAngle, Mathf.Clamp(t, 0,1));   
+        return Mathf.Lerp(angleA.rotationAngle, angleB.rotationAngle, Mathf.Clamp(t, 0, 1));   
     }
 
     public bool PlayerWithin(Vector3 position)

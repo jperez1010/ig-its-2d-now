@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class RotationAngle : MonoBehaviour
 {
-    public Vector3 rotationAngle;
+    public float rotationAngle;
 }
