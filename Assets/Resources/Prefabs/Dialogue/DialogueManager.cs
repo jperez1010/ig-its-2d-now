@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Params")]
+    [SerializeField] private float typingSpeed = 0.04f;
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -18,6 +20,10 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
+
+    private bool canContinueToNextLine = false;
+
+    private Coroutine displayLineCoroutine;
     private static DialogueManager instance;
 
     private void Awake()
@@ -56,7 +62,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (canContinueToNextLine && currentStory.currentChoices.Count == 0 && Input.GetKeyUp(KeyCode.Mouse0))
         {
             ContinueStory();
         }
@@ -85,7 +91,11 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             // set text for the current dialogue line
-            dialogueText.text = currentStory.Continue();
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
             // display choices, if any, for this dialogue line
             DisplayChoices();
         }
@@ -93,6 +103,31 @@ public class DialogueManager : MonoBehaviour
         {
             StartCoroutine(ExitDialogueMode());
         }   
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        // empty the dialogue text
+        dialogueText.text = "";
+
+        canContinueToNextLine = false;
+        int counter = 0;
+
+        // display each letter one at a time
+        foreach (char letter in line.ToCharArray())
+        {
+            // if button is pressed, finish displaying line
+            if (Input.GetKeyUp(KeyCode.Mouse0) && counter >= 2)
+            {
+                dialogueText.text = line;
+                break;
+            }
+            dialogueText.text += letter;
+            counter += 1;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        canContinueToNextLine = true;
+        counter = 0;
     }
 
     private void DisplayChoices()
@@ -132,6 +167,10 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        currentStory.ChooseChoiceIndex(choiceIndex);
+        if (canContinueToNextLine)
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+            ContinueStory();
+        }
     }
 }
