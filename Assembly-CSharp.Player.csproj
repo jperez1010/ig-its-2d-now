@@ -75,7 +75,6 @@
     <Compile Include="Assets\Scripts\Player\Combo Tree\ActionEnum.cs" />
     <Compile Include="Assets\Scripts\UI\MythoGemUI.cs" />
     <Compile Include="Assets\HitboxFollower.cs" />
-    <Compile Include="Assets\Scripts\AI\AIStates.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Ink\Ink\Demos\Basic Demo\Scripts\BasicInkExample.cs" />
@@ -91,7 +90,6 @@
     <Compile Include="Assets\Scripts\Player\Combo Tree\WaitTime.cs" />
     <Compile Include="Assets\Scripts\Player\Combo Tree\WaitTimeHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\AI\EnemyAI.cs" />
     <Compile Include="Assets\Resources\Prefabs\Environment\Shaders\Water\ToonWaterShader-master\Assets\Scripts\WaterBob.cs" />
     <Compile Include="Assets\Scripts\TriggerArea.cs" />
     <Compile Include="Assets\Health.cs" />
@@ -104,7 +102,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\BasicMelee.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\Scripts\AI\AISubstates.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Menu\StartGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
@@ -119,7 +116,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\OscillateColor_Point.cs" />
     <Compile Include="Assets\Scripts\Player\MythomorphStats.cs" />
-    <Compile Include="Assets\Scripts\EnemyLightAttackGenerate.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Player\AttackGenerate.cs" />
@@ -152,13 +148,13 @@
     <Compile Include="Assets\Scripts\UI\VcaController.cs" />
     <Compile Include="Assets\Scripts\MoveList.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets\Scripts\LineOfSight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Utilities\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCamera.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Resources\Prefabs\Dialogue\DialogueTrigger.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\AI\AIState.cs" />
     <Compile Include="Assets\Scripts\UI\TriggerAudio.cs" />
   </ItemGroup>
   <ItemGroup>

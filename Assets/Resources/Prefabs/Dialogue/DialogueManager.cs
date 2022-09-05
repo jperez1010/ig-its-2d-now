@@ -51,7 +51,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-        targetPanel = new Vector3(14f, -150f, 0f);
+        targetPanel = new Vector3(20f, 28f, 0f);
         targetMythogem = new Vector3(-325f, -158f, 0f);
         //get all of the choices text
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -72,7 +72,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (canContinueToNextLine && currentStory.currentChoices.Count == 0 && Input.GetKeyUp(KeyCode.Mouse0))
+        if (canContinueToNextLine && currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Mouse0))
         {
             ContinueStory();
         }
@@ -134,7 +134,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in line.ToCharArray())
         {
             // if button is pressed, finish displaying line
-            if (Input.GetKeyUp(KeyCode.Mouse0) && counter >= 2)
+            if (Input.GetKey(KeyCode.Mouse0) && counter >= 2)
             {
                 dialogueText.text = line;
                 break;
@@ -160,7 +160,7 @@ public class DialogueManager : MonoBehaviour
         //Shift upwards
         if (currentChoices.Count > 0)
         {
-            targetPanel = new Vector3(14f, -70f, -0.60114f);
+            targetPanel = new Vector3(20f, 45f, -0.60114f);
         }
 
         int index = 0;
@@ -196,7 +196,7 @@ public class DialogueManager : MonoBehaviour
             {
                 choices[i].gameObject.SetActive(false);
             }
-            targetPanel = new Vector3(14f, -150f, -0.60114f);
+            targetPanel = new Vector3(20f, 28f, -0.60114f);
             ContinueStory();
         }
     }
@@ -206,7 +206,23 @@ public class DialogueManager : MonoBehaviour
         Health.GetComponent<RectTransform>().localPosition = position;
         Vector3 position2 = Vector3.Lerp(Mythogem.GetComponent<RectTransform>().localPosition, targetMythogem, lerpSpeed);
         Mythogem.GetComponent<RectTransform>().localPosition = position2;
-        Vector3 position3 = Vector3.Lerp(dialoguePanel.GetComponent<RectTransform>().anchoredPosition, targetPanel, lerpSpeed);
-        dialoguePanel.GetComponent<RectTransform>().anchoredPosition = position3;
+        Vector3 position3 = Vector3.Lerp(dialoguePanel.transform.Find("Dialogue Panel").GetComponent<RectTransform>().anchoredPosition, targetPanel, lerpSpeed);
+        dialoguePanel.transform.Find("Dialogue Panel").GetComponent<RectTransform>().anchoredPosition = position3;
+        for (int i = 0; i < choices.Length; i++)
+        {
+            if (choices[i])
+            {
+                Vector3 targetChoice = choices[i].GetComponent<RectTransform>().anchoredPosition;
+                targetChoice.y = 16f - i * 18f;
+                Vector3 position4 = Vector3.Lerp(choices[i].GetComponent<RectTransform>().anchoredPosition, targetChoice, lerpSpeed);
+                choices[i].GetComponent<RectTransform>().anchoredPosition = position4;
+            } else
+            {
+                Vector3 targetChoice = choices[i].GetComponent<RectTransform>().anchoredPosition;
+                targetChoice.y = 16f;
+                Vector3 position4 = Vector3.Lerp(choices[i].GetComponent<RectTransform>().anchoredPosition, targetChoice, lerpSpeed);
+                choices[i].GetComponent<RectTransform>().anchoredPosition = position4;
+            }
+        }
     }
 }
