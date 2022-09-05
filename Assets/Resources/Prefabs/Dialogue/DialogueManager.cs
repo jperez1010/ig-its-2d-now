@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject Health;
+    [SerializeField] private GameObject Mythogem;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -25,6 +27,11 @@ public class DialogueManager : MonoBehaviour
 
     private Coroutine displayLineCoroutine;
     private static DialogueManager instance;
+
+    float lerpSpeed;
+    private Vector3 targetHP;
+    private Vector3 targetMythogem;
+    private Vector3 targetPanel;
 
     private void Awake()
     {
@@ -44,7 +51,8 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-
+        targetPanel = new Vector3(14f, -150f, 0f);
+        targetMythogem = new Vector3(-325f, -158f, 0f);
         //get all of the choices text
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -57,6 +65,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        lerpSpeed = 5f * Time.deltaTime;
+        UpdateUI();
         if (!dialogueIsPlaying)
         {
             return;
@@ -73,6 +83,12 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        for (int i = 0; i < choices.Length; i++)
+        {
+            choices[i].gameObject.SetActive(false);
+        }
+        targetHP = new Vector3(0f, 100f, 0f);
+        targetMythogem = new Vector3(-325f, -275f, 0f);
 
         ContinueStory();
     }
@@ -84,6 +100,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+        targetHP = Vector3.zero;
+        targetMythogem = new Vector3(-325f, -158f, 0f);
     }
 
     private void ContinueStory()
@@ -97,7 +115,6 @@ public class DialogueManager : MonoBehaviour
             }
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
             // display choices, if any, for this dialogue line
-            DisplayChoices();
         }
         else
         {
@@ -126,8 +143,8 @@ public class DialogueManager : MonoBehaviour
             counter += 1;
             yield return new WaitForSeconds(typingSpeed);
         }
+        DisplayChoices();
         canContinueToNextLine = true;
-        counter = 0;
     }
 
     private void DisplayChoices()
@@ -139,6 +156,11 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogError("More choices were given than the UI can support. Number of choices given: "
                 + currentChoices.Count);
+        }
+        //Shift upwards
+        if (currentChoices.Count > 0)
+        {
+            targetPanel = new Vector3(14f, -70f, -0.60114f);
         }
 
         int index = 0;
@@ -170,7 +192,21 @@ public class DialogueManager : MonoBehaviour
         if (canContinueToNextLine)
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
+            for (int i = 0; i < choices.Length; i++)
+            {
+                choices[i].gameObject.SetActive(false);
+            }
+            targetPanel = new Vector3(14f, -150f, -0.60114f);
             ContinueStory();
         }
+    }
+    private void UpdateUI()
+    {
+        Vector3 position = Vector3.Lerp(Health.GetComponent<RectTransform>().localPosition, targetHP, lerpSpeed);
+        Health.GetComponent<RectTransform>().localPosition = position;
+        Vector3 position2 = Vector3.Lerp(Mythogem.GetComponent<RectTransform>().localPosition, targetMythogem, lerpSpeed);
+        Mythogem.GetComponent<RectTransform>().localPosition = position2;
+        Vector3 position3 = Vector3.Lerp(dialoguePanel.GetComponent<RectTransform>().anchoredPosition, targetPanel, lerpSpeed);
+        dialoguePanel.GetComponent<RectTransform>().anchoredPosition = position3;
     }
 }
