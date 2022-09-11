@@ -1,7 +1,13 @@
--Hmm... let's see, I don't remember mapping a pool of water... #speaker: Illinois James #layout: right
+INCLUDE Globals.ink
+
+{Illinois_James == "": -> IllinoisIntro}
+{Illinois_James == "FirstEncounter": -> FirstEncounter}
+
+== IllinoisIntro ==
+-Hmm... let's see, I don't remember mapping a pool of water...
 -!!!
 -Phew... you scared me. 
--I thought you might be some mythomorph that creeping up on me. 
+-I thought you might be some mythomorph that creeped up on me. 
 -According to my notes, there shouldn't being an entrance to the cave around here, though. 
 -How'd you manage your your way in here, kid?
 
@@ -50,8 +56,10 @@
     -I'm 30
     * Yikes
     - Maybe being stuck here all alone wasn't such a bad thing.
+    ~ Illinois_James = "FirstEncounter"
+    ->DONE
 
-
+== FirstEncounter ==
 - !!!
 - Well, looks like our luck has already ran short. 
 - That's a sharpuch, a nasty little critter that will hunt you down relentlessly in the hopes of stealing any shinies you may have on you.

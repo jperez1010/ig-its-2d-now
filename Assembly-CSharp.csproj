@@ -156,6 +156,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\AI\AIState.cs" />
     <Compile Include="Assets\Scripts\UI\TriggerAudio.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Dialogue\DialogueVariables.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

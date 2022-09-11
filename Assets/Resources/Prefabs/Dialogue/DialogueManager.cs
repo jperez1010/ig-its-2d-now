@@ -4,11 +4,14 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using Ink.UnityIntegration;
 
 public class DialogueManager : MonoBehaviour
 {
     [Header("Params")]
     [SerializeField] private float typingSpeed = 0.04f;
+    [Header("Globals Ink File")]
+    [SerializeField] private InkFile globalsInkFile;
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -33,6 +36,8 @@ public class DialogueManager : MonoBehaviour
     private Vector3 targetMythogem;
     private Vector3 targetPanel;
 
+    private DialogueVariables dialogueVariables;
+
     private void Awake()
     {
         if (instance != null)
@@ -40,6 +45,7 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("Found more than one Dialogue Manager in scene");
         }
         instance = this;
+        dialogueVariables = new DialogueVariables(globalsInkFile.filePath);
     }
 
     public static DialogueManager GetInstance()
@@ -83,6 +89,7 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        dialogueVariables.StartListening(currentStory);
         for (int i = 0; i < choices.Length; i++)
         {
             choices[i].gameObject.SetActive(false);
@@ -96,6 +103,8 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
+
+        dialogueVariables.StopListening(currentStory);
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -197,8 +206,19 @@ public class DialogueManager : MonoBehaviour
                 choices[i].gameObject.SetActive(false);
             }
             targetPanel = new Vector3(20f, 28f, -0.60114f);
+            currentStory.Continue();
             ContinueStory();
         }
+    }
+    public Ink.Runtime.Object GetVariableState(string variableName)
+    {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        if (variableValue == null)
+        {
+            Debug.LogWarning("Ink Variable found to be null: " + variableName);
+        }
+        return variableValue;
     }
     private void UpdateUI()
     {
@@ -210,7 +230,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.transform.Find("Dialogue Panel").GetComponent<RectTransform>().anchoredPosition = position3;
         for (int i = 0; i < choices.Length; i++)
         {
-            if (choices[i])
+            if (choices[i].activeInHierarchy)
             {
                 Vector3 targetChoice = choices[i].GetComponent<RectTransform>().anchoredPosition;
                 targetChoice.y = 16f - i * 18f;
