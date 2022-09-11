@@ -21,6 +21,9 @@ public class DialogueManager : MonoBehaviour
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
 
+    [Header("Player Manager")]
+    [SerializeField] private GameObject PlayerManager;
+
     private TextMeshProUGUI[] choicesText;
 
     private Story currentStory;
@@ -94,6 +97,7 @@ public class DialogueManager : MonoBehaviour
         {
             choices[i].gameObject.SetActive(false);
         }
+        StartCoroutine(disableMovement());
         targetHP = new Vector3(0f, 100f, 0f);
         targetMythogem = new Vector3(-325f, -275f, 0f);
 
@@ -108,6 +112,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        StartCoroutine(enableMovement());
         dialogueText.text = "";
         targetHP = Vector3.zero;
         targetMythogem = new Vector3(-325f, -158f, 0f);
@@ -244,5 +249,27 @@ public class DialogueManager : MonoBehaviour
                 choices[i].GetComponent<RectTransform>().anchoredPosition = position4;
             }
         }
+    }
+    private IEnumerator disableMovement()
+    {
+        GameObject[] morphObjects = PlayerManager.GetComponent<CurrentPlayer>().morphObjects;
+        foreach (GameObject morph in morphObjects)
+        {
+            morph.GetComponent<PlayerMovement>().enabled = false;
+            morph.GetComponent<Animator>().enabled = false;
+            morph.GetComponent<InputHandlerAttack>().enabled = false;
+        }
+        yield return new WaitForEndOfFrame();
+    }
+    private IEnumerator enableMovement()
+    {
+        GameObject[] morphObjects = PlayerManager.GetComponent<CurrentPlayer>().morphObjects;
+        foreach (GameObject morph in morphObjects)
+        {
+            morph.GetComponent<PlayerMovement>().enabled = true;
+            morph.GetComponent<Animator>().enabled = true;
+            morph.GetComponent<InputHandlerAttack>().enabled = true ;
+        }
+        yield return new WaitForEndOfFrame();
     }
 }

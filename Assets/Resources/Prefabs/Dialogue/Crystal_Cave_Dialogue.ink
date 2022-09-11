@@ -76,9 +76,13 @@ INCLUDE Globals.ink
  * Yeah, key words "GOING TO BE"..
  - What th-
  - Sigh
- - Alright, fine. I may not be an expert, but I can give you a few pointers to start out. In mythomorph battles, you got two types of basic attacks: LIGHT Attacks and HEAVY attacks. 
- - LIGHT attacks are moves that can be thrown out at a moments notice, with little delay in between each one. (These can be used by pressing right click.)
- - HEAVY attacks are moves that take a little longer to charge up and require a small break in between each but dish out much more damage than a LIGHT attack and may have additional effects. (These can be used by pressing left click)
+ - Alright, fine. I may not be an expert, but I can give you a few pointers to start out.
+ - In mythomorph battles, you got two types of basic attacks: LIGHT Attacks and HEAVY attacks. 
+ - LIGHT attacks are moves that can be thrown out at a moments notice, with little delay in between each one.
+ - These can be used by pressing right click.
+ - HEAVY attacks are moves that take a little longer to charge up and require a small break in between each.
+ - In return, they dish out much more damage than a LIGHT attack. 
+ - These can be used by pressing left click
  * Seems simple enough.
  - Alright, why not try your skills out on Sharpuch, then, see what you got?
  * This'll only take a second.
