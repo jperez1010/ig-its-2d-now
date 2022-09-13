@@ -21,7 +21,7 @@ public class CharacterPhysics : MonoBehaviour
     {
         //int layerMask = 0;
         //layerMask = ~layerMask;
-        
+        //hi im chris
         RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
         //
